@@ -16,12 +16,12 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
     apt update && apt install -y libsm6 libxext6 && \
     apt-get install -y libxrender-dev
 
-# COPY . /FLASK_API
+COPY . /FLASK_API
 
-# RUN cd FLASK_API && \
-#     pip3 install -r requirements.txt
+RUN cd FLASK_API && \
+    pip3 install -r requirements.txt
 
-# WORKDIR /FLASK_API
+WORKDIR /FLASK_API
 
-# CMD python3 app.py
+CMD python3 app.py
 # CMD ["/bin/bash", "entrypoint.sh"]
